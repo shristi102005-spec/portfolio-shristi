@@ -15,7 +15,9 @@ export function Skills() {
   return (
     <Section id="skills" eyebrow="Toolkit" title="Skills & Stack" subtitle="A modern, end-to-end toolbox for shipping intelligent products.">
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {groups.map((g, i) => (
+        {groups.map((g, i) => {
+          const Icon = g.icon;
+          return (
           <motion.div
             key={g.title}
             initial={{ opacity: 0, y: 30 }}
@@ -28,7 +30,7 @@ export function Skills() {
                  style={{ background: "radial-gradient(circle at top, oklch(0.7 0.25 285 / 0.18), transparent 60%)" }} />
             <div className="relative">
               <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[var(--neon-purple)]/30 to-[var(--neon-cyan)]/30 flex items-center justify-center mb-4">
-                <g.icon className="w-5 h-5 text-[var(--neon-cyan)]" />
+                <Icon className="w-5 h-5 text-[var(--neon-cyan)]" />
               </div>
               <h3 className="text-lg font-semibold mb-3">{g.title}</h3>
               <div className="flex flex-wrap gap-2">
@@ -40,7 +42,8 @@ export function Skills() {
               </div>
             </div>
           </motion.div>
-        ))}
+          );
+        })}
       </div>
     </Section>
   );
