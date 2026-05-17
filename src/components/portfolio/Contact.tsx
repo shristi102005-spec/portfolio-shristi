@@ -22,17 +22,17 @@ export function Contact() {
             </p>
           </div>
           <div className="space-y-3">
-            <a href="mailto:shristi@example.com" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
+            <a href="mailto:shristi102005@gmail.com" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
               <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Mail className="w-4 h-4" /></span>
-              shristi@example.com
+              shristi102005@gmail.com
             </a>
-            <a href="#" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
+            <a href="https://www.linkedin.com/in/shristi-483363295/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
               <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Linkedin className="w-4 h-4" /></span>
-              linkedin.com/in/shristi
+              linkedin.com/in/shristi-483363295
             </a>
-            <a href="#" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
+            <a href="https://github.com/shristi102005-spec" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
               <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Github className="w-4 h-4" /></span>
-              github.com/shristi
+              github.com/shristi102005-spec
             </a>
           </div>
         </motion.div>
