@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Shristi's Portfolio" },
+      { name: "description", content: "Shristi's AI Nexus is a modern, interactive portfolio website for an AI/ML Engineer and Data Analyst." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Shristi's Portfolio" },
+      { property: "og:description", content: "Shristi's AI Nexus is a modern, interactive portfolio website for an AI/ML Engineer and Data Analyst." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Shristi's Portfolio" },
+      { name: "twitter:description", content: "Shristi's AI Nexus is a modern, interactive portfolio website for an AI/ML Engineer and Data Analyst." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/53e24c5b-1d7e-4ef6-90e2-47551c3ed2e8/id-preview-f1b02fd6--fcb78b5c-7908-41ac-bc35-7f0bfc0eb350.lovable.app-1779000106016.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/53e24c5b-1d7e-4ef6-90e2-47551c3ed2e8/id-preview-f1b02fd6--fcb78b5c-7908-41ac-bc35-7f0bfc0eb350.lovable.app-1779000106016.png" },
     ],
     links: [
       {
