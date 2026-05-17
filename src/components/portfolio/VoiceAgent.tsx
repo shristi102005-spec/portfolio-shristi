@@ -4,7 +4,25 @@ import { Mic, MicOff, Phone, PhoneOff, Sparkles } from "lucide-react";
 import Vapi from "@vapi-ai/web";
 
 const VAPI_PUBLIC_KEY = "263927c3-b68f-4dfe-8757-9a734306e697";
-const VAPI_ASSISTANT_ID = "533b64b5-90a0-42a5-949b-ba113bdcdff0";
+
+// Inline assistant config — describes Shristi to the model
+const assistantConfig = {
+  name: "AI Shristi",
+  firstMessage:
+    "Hey! I'm an AI version of Shristi. Ask me anything about my work in AI, ML, or data analytics.",
+  model: {
+    provider: "openai",
+    model: "gpt-4o-mini",
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are an AI voice clone of Shristi, an AI/ML Engineer, Data Analyst, and Electronics Engineering student specializing in AI & ML. Speak warmly and confidently, in the first person, as if you ARE Shristi. Keep answers concise (1–3 sentences) and conversational. Topics: AI/ML projects (NeuralVision, SentimentAI, MedScan), data analytics work, electronics & embedded ML, certifications (Google Data Analytics, TensorFlow, AWS), and career goals (open to AI/ML roles starting 2026). If asked something unrelated, gently steer back to Shristi's work.",
+      },
+    ],
+  },
+  voice: { provider: "playht", voiceId: "jennifer" },
+} as const;
 
 export function VoiceAgent() {
   const vapiRef = useRef<Vapi | null>(null);
@@ -34,7 +52,7 @@ export function VoiceAgent() {
     setError(null);
     setStatus("connecting");
     try {
-      await vapiRef.current.start(VAPI_ASSISTANT_ID);
+      await vapiRef.current.start(assistantConfig as any);
     } catch (e: any) {
       setError(e?.message || "Couldn't start voice call.");
       setStatus("idle");

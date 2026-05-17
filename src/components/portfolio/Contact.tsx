@@ -26,9 +26,9 @@ export function Contact() {
               <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Mail className="w-4 h-4" /></span>
               shristi@example.com
             </a>
-            <a href="https://www.linkedin.com/in/shristi-483363295/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
+            <a href="#" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
               <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Linkedin className="w-4 h-4" /></span>
-              linkedin.com/in/shristi-483363295
+              linkedin.com/in/shristi
             </a>
             <a href="#" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
               <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Github className="w-4 h-4" /></span>
