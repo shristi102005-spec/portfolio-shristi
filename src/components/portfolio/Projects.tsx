@@ -4,40 +4,28 @@ import { ArrowUpRight, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "NeuralVision — Real-time Object Detection",
-    desc: "End-to-end YOLOv8 pipeline with custom dataset, deployed on edge devices with sub-50ms inference.",
-    tags: ["PyTorch", "YOLOv8", "OpenCV", "FastAPI"],
+    title: "NeuroNest AI — AI-Powered PDF Assistant",
+    desc: "RAG chatbot over your documents with semantic PDF search, MCQ generation, and AI-powered summarization.",
+    tags: ["Python", "LangChain", "FAISS", "ChromaDB", "Hugging Face", "OpenAI API", "Streamlit"],
     gradient: "from-fuchsia-500/40 via-purple-500/30 to-indigo-500/40",
   },
   {
-    title: "InsightDash — Analytics Platform",
-    desc: "Interactive BI dashboard turning 1M+ rows of sales data into actionable forecasts with ML.",
-    tags: ["Python", "Power BI", "Prophet", "SQL"],
+    title: "Synckro — Wearable Real-Time Translator",
+    desc: "Multilingual wearable translator with speech-to-text, language detection, translation + TTS, and broadcast/whisper modes.",
+    tags: ["Python", "Vosk", "Deep Translator", "Argos Translate", "JavaScript"],
     gradient: "from-cyan-400/40 via-blue-500/30 to-indigo-500/40",
   },
   {
-    title: "SentimentAI — NLP Engine",
-    desc: "Fine-tuned transformer for multilingual sentiment analysis, serving 10k+ daily requests.",
-    tags: ["BERT", "HuggingFace", "Docker", "AWS"],
+    title: "Customer Shopping Behavior Analysis",
+    desc: "Retail transaction analysis with customer segmentation and a revenue insights dashboard for actionable decisions.",
+    tags: ["Python", "PostgreSQL", "Power BI", "EDA"],
     gradient: "from-emerald-400/40 via-teal-500/30 to-cyan-500/40",
   },
   {
-    title: "SmartGrid IoT Monitor",
-    desc: "Embedded ML model on ESP32 predicting power anomalies in real-time across a microgrid.",
-    tags: ["TinyML", "ESP32", "MQTT", "TensorFlow Lite"],
+    title: "House Price Prediction",
+    desc: "Comparative ML pipeline with hyperparameter tuning and RMSE optimization across regression models.",
+    tags: ["Python", "Scikit-learn", "Machine Learning"],
     gradient: "from-orange-400/40 via-pink-500/30 to-rose-500/40",
-  },
-  {
-    title: "MedScan — Diagnostic Assistant",
-    desc: "CNN-based medical imaging classifier achieving 96% accuracy on chest X-ray benchmarks.",
-    tags: ["Keras", "CNN", "Streamlit", "Kaggle"],
-    gradient: "from-violet-500/40 via-fuchsia-500/30 to-pink-500/40",
-  },
-  {
-    title: "EchoBot — Conversational AI",
-    desc: "RAG chatbot with vector search over private knowledge bases. Built for enterprise use cases.",
-    tags: ["LangChain", "OpenAI", "Pinecone", "Next.js"],
-    gradient: "from-sky-400/40 via-cyan-500/30 to-teal-500/40",
   },
 ];
 

@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
 
 const roles = [
-  "AI/ML Engineer",
-  "Data Analyst",
-  "Electronics Engineer",
-  "Builder of Intelligent Systems",
+  "Building AI Systems",
+  "Creating Smart Experiences",
+  "Exploring Generative AI",
+  "Engineering with Data",
 ];
 
 function Typewriter() {

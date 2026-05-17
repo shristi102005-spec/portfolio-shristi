@@ -3,25 +3,27 @@ import { Section } from "./Section";
 import { Award, GraduationCap } from "lucide-react";
 
 const certs = [
-  { name: "Google Data Analytics Professional", issuer: "Coursera · Google" },
-  { name: "Machine Learning Specialization", issuer: "DeepLearning.AI · Stanford" },
-  { name: "TensorFlow Developer Certificate", issuer: "Google" },
-  { name: "AWS Cloud Practitioner", issuer: "Amazon Web Services" },
-  { name: "Microsoft Power BI Data Analyst", issuer: "Microsoft" },
+  { name: "Google Cloud Generative AI", issuer: "Google Cloud" },
+  { name: "Introduction to Machine Learning", issuer: "Google Cloud Skills Boost" },
+  { name: "Vertex AI", issuer: "Google Cloud" },
+  { name: "Google Cloud Skills Boost", issuer: "Google" },
+  { name: "VLSI for Beginners", issuer: "Maven Silicon" },
+  { name: "Drone Bootcamp", issuer: "Workshop" },
+  { name: "Business Analysis", issuer: "Certification" },
 ];
 
 const edu = [
   {
-    school: "B.Tech in Electronics Engineering (AI & ML)",
-    place: "Indian Institute of Technology",
-    period: "2022 — 2026",
-    detail: "Specialization in Artificial Intelligence & Machine Learning. CGPA 3.9 / 4.0.",
+    school: "B.Tech — Electronics Engineering",
+    place: "Specialization: AI & Machine Learning",
+    period: "2023 — 2027",
+    detail: "Core focus on AI/ML, Generative AI, data analytics, and intelligent embedded systems.",
   },
   {
-    school: "Higher Secondary — Science (PCM)",
-    place: "Delhi Public School",
-    period: "2020 — 2022",
-    detail: "Graduated with distinction. School topper in Mathematics.",
+    school: "Diploma in German Language",
+    place: "Foreign Language Certification",
+    period: "Completed",
+    detail: "Conversational and written proficiency in German — broadening global collaboration reach.",
   },
 ];
 
