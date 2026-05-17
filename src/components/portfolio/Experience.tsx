@@ -4,28 +4,10 @@ import { Briefcase } from "lucide-react";
 
 const items = [
   {
-    role: "AI/ML Engineering Intern",
-    org: "Innovate Labs",
-    period: "2025 — Present",
-    desc: "Building production ML pipelines for predictive maintenance. Shipped models that reduced downtime by 32%.",
-  },
-  {
-    role: "Data Analyst Intern",
-    org: "DataPulse Analytics",
-    period: "2024",
-    desc: "Designed dashboards used by 50+ stakeholders. Automated weekly reporting saving 20 hours/week.",
-  },
-  {
-    role: "Research Assistant — AI Lab",
-    org: "University Research Group",
-    period: "2024",
-    desc: "Co-authored research on edge ML for embedded systems. Presented at internal symposium.",
-  },
-  {
-    role: "Freelance Developer",
-    org: "Independent",
-    period: "2023 — Present",
-    desc: "Delivered end-to-end ML & analytics solutions for early-stage startups and SMEs.",
+    role: "Campus Ambassador",
+    org: "eDC IIT Delhi — Beacon 2026",
+    period: "2025 — 2026",
+    desc: "Led campus outreach, managed communications and coordination, and promoted Beacon 2026 — a national-level tech festival by the Entrepreneurship Development Cell, IIT Delhi.",
   },
 ];
 
