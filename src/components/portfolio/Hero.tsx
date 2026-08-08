@@ -1,81 +1,18 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
-
-const roles = [
-  "Building AI Systems",
-  "Creating Smart Experiences",
-  "Exploring Generative AI",
-  "Engineering with Data",
-];
-
-function Typewriter() {
-  const [i, setI] = useState(0);
-  const [text, setText] = useState("");
-  const [del, setDel] = useState(false);
-  useEffect(() => {
-    const current = roles[i];
-    const speed = del ? 40 : 90;
-    const t = setTimeout(() => {
-      if (!del) {
-        const next = current.slice(0, text.length + 1);
-        setText(next);
-        if (next === current) setTimeout(() => setDel(true), 1400);
-      } else {
-        const next = current.slice(0, text.length - 1);
-        setText(next);
-        if (next === "") {
-          setDel(false);
-          setI((i + 1) % roles.length);
-        }
-      }
-    }, speed);
-    return () => clearTimeout(t);
-  }, [text, del, i]);
-  return (
-    <span className="text-gradient">
-      {text}
-      <span className="ml-1 inline-block w-[3px] h-[1em] -mb-1 bg-[var(--neon-cyan)] animate-pulse" />
-    </span>
-  );
-}
-
-function Particles() {
-  const dots = Array.from({ length: 28 });
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {dots.map((_, i) => (
-        <motion.span
-          key={i}
-          className="absolute rounded-full"
-          style={{
-            left: `${(i * 37) % 100}%`,
-            top: `${(i * 53) % 100}%`,
-            width: 2 + (i % 4),
-            height: 2 + (i % 4),
-            background: i % 2 ? "var(--neon-cyan)" : "var(--neon-purple)",
-            opacity: 0.6,
-          }}
-          animate={{ y: [0, -30, 0], opacity: [0.2, 0.8, 0.2] }}
-          transition={{ duration: 4 + (i % 5), repeat: Infinity, delay: i * 0.15 }}
-        />
-      ))}
-    </div>
-  );
-}
+import { ArrowDown, Mail } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
-      {/* Blobs */}
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-[var(--neon-purple)] opacity-20 blur-3xl animate-blob" />
-      <div className="absolute top-1/3 -right-32 w-[600px] h-[600px] rounded-full bg-[var(--neon-blue)] opacity-20 blur-3xl animate-blob" style={{ animationDelay: "5s" }} />
-      <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-[var(--neon-cyan)] opacity-15 blur-3xl animate-blob" style={{ animationDelay: "10s" }} />
-      <Particles />
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg"
+    >
+      {/* Restrained gradient — single soft glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full bg-[var(--neon-purple)] opacity-[0.12] blur-3xl pointer-events-none" />
 
-      {/* Grid overlay */}
+      {/* Subtle grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
@@ -83,88 +20,80 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center py-24">
+        {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-xs text-muted-foreground"
+          transition={{ duration: 0.5 }}
+          className="text-xs sm:text-sm font-medium uppercase tracking-[0.25em] text-muted-foreground mb-8"
         >
-          <Sparkles className="w-3.5 h-3.5 text-[var(--neon-cyan)]" />
-          Open to opportunities · 2026
-        </motion.div>
+          Electronics Engineering • AI & ML
+        </motion.p>
 
+        {/* Main headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.05]"
+          transition={{ duration: 0.6, delay: 0.08 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]"
         >
-          Hi, I'm <span className="text-gradient">Shristi</span>
-          <br />
-          <span className="text-foreground/90">I build with</span>{" "}
-          <Typewriter />
+          Hi, I'm <span className="text-gradient">Shristi</span>.
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-6 text-sm md:text-base uppercase tracking-[0.2em] text-muted-foreground"
-        >
-          Electronics Engineering Student specializing in AI &amp; ML
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+        {/* Second headline */}
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-8 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed"
+          transition={{ duration: 0.6, delay: 0.18 }}
+          className="mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground/85 tracking-tight leading-tight"
         >
-          I build practical AI applications and intelligent systems using Python, FastAPI,
-          LLMs, RAG, and modern cloud technologies.
+          I build practical AI systems.
+        </motion.h2>
+
+        {/* Supporting text */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.28 }}
+          className="mt-7 mx-auto max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+        >
+          Electronics Engineering student specializing in AI & ML, building
+          practical AI applications with Python, FastAPI, LLMs, RAG, and modern
+          cloud technologies.
         </motion.p>
 
+        {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.38 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <a
             href="#projects"
-            className="group relative inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold bg-gradient-to-r from-[var(--neon-purple)] to-[var(--neon-blue)] text-white animate-pulse-glow"
+            className="group inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold bg-foreground text-background transition hover:opacity-90"
           >
-            View Projects
+            View My Projects
             <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
           </a>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold glass hover:bg-white/5 transition"
           >
-            <Mail className="w-4 h-4" /> Get in touch
+            <Mail className="w-4 h-4" /> Get In Touch
           </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-12 flex items-center justify-center gap-5 text-muted-foreground"
-        >
-          <a href="https://github.com/shristi102005-spec" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-foreground transition"><Github className="w-5 h-5" /></a>
-          <a href="https://www.linkedin.com/in/shristi-483363295" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-foreground transition"><Linkedin className="w-5 h-5" /></a>
-          <a href="#contact" aria-label="Email" className="hover:text-foreground transition"><Mail className="w-5 h-5" /></a>
         </motion.div>
       </div>
 
+      {/* Minimal scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border border-foreground/20 flex items-start justify-center p-1.5"
+          className="w-6 h-10 rounded-full border border-foreground/15 flex items-start justify-center p-1.5"
         >
-          <div className="w-1 h-2 rounded-full bg-foreground/40" />
+          <div className="w-1 h-2 rounded-full bg-foreground/30" />
         </motion.div>
       </div>
     </section>
