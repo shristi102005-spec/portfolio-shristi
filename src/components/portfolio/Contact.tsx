@@ -6,7 +6,7 @@ import { useState } from "react";
 export function Contact() {
   const [sent, setSent] = useState(false);
   return (
-    <Section id="contact" eyebrow="Let's Connect" title="Build something extraordinary." subtitle="Open to internships, collaborations, and full-time AI/ML roles starting 2026.">
+    <Section id="contact" eyebrow="Let's Connect" title="Build something extraordinary." subtitle="Open to AI/ML internships, collaborations, and opportunities.">
       <div className="grid md:grid-cols-5 gap-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -23,16 +23,16 @@ export function Contact() {
           </div>
           <div className="space-y-3">
             <a href="mailto:shristi102005@gmail.com" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
-              <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Mail className="w-4 h-4" /></span>
-              shristi102005@gmail.com
+              <span className="w-9 h-9 rounded-lg glass-strong shrink-0 flex items-center justify-center"><Mail className="w-4 h-4" /></span>
+              <span className="break-all">shristi102005@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/shristi-483363295/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
-              <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Linkedin className="w-4 h-4" /></span>
-              linkedin.com/in/shristi-483363295
+            <a href="https://www.linkedin.com/in/shristi-483363295" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
+              <span className="w-9 h-9 rounded-lg glass-strong shrink-0 flex items-center justify-center"><Linkedin className="w-4 h-4" /></span>
+              <span className="break-all">linkedin.com/in/shristi-483363295</span>
             </a>
             <a href="https://github.com/shristi102005-spec" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-sm hover:text-[var(--neon-cyan)] transition">
-              <span className="w-9 h-9 rounded-lg glass-strong flex items-center justify-center"><Github className="w-4 h-4" /></span>
-              github.com/shristi102005-spec
+              <span className="w-9 h-9 rounded-lg glass-strong shrink-0 flex items-center justify-center"><Github className="w-4 h-4" /></span>
+              <span className="break-all">github.com/shristi102005-spec</span>
             </a>
           </div>
         </motion.div>
