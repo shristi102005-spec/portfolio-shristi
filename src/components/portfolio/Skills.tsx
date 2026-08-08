@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
-import { Brain, Code2, Database, LineChart, Cpu, Cloud, Sparkles } from "lucide-react";
+import { Brain, Code2, Database, LineChart, Cpu, Cloud, Sparkles, Server } from "lucide-react";
 
 const groups = [
   { icon: Code2, title: "Programming", items: ["Python", "SQL", "JavaScript"] },
