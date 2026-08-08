@@ -107,6 +107,15 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-6 text-sm md:text-base uppercase tracking-[0.2em] text-muted-foreground"
+        >
+          Electronics Engineering Student specializing in AI &amp; ML
+        </motion.p>
+
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
