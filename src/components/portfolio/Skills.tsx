@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
-import { Brain, Code2, Database, LineChart, Cpu, Cloud, Sparkles } from "lucide-react";
+import { Brain, Code2, Database, LineChart, Cpu, Cloud, Sparkles, Server } from "lucide-react";
 
 const groups = [
   { icon: Code2, title: "Programming", items: ["Python", "SQL", "JavaScript"] },
-  { icon: Brain, title: "AI / ML", items: ["Scikit-learn", "Pandas", "NumPy", "Hugging Face"] },
-  { icon: Sparkles, title: "Generative AI", items: ["LangChain", "RAG", "FAISS", "ChromaDB", "OpenAI API", "Gemini API"] },
-  { icon: LineChart, title: "Data Analytics", items: ["Power BI", "PostgreSQL", "EDA", "Dashboards"] },
-  { icon: Cloud, title: "Cloud", items: ["GCP", "Vertex AI", "Google Cloud Skills Boost"] },
-  { icon: Cpu, title: "Electronics & Hardware", items: ["VLSI", "FPGA", "Embedded Systems"] },
+  { icon: Brain, title: "AI & Machine Learning", items: ["Machine Learning", "Scikit-learn", "Regression", "Decision Trees", "Random Forest", "Feature Engineering", "Model Evaluation"] },
+  { icon: Sparkles, title: "Generative AI & LLMs", items: ["LangChain", "RAG", "OpenAI API", "Google Gemini", "Hugging Face", "Prompt Engineering", "Sentence Transformers"] },
+  { icon: Database, title: "Vector Databases", items: ["FAISS", "ChromaDB", "Qdrant", "Embeddings", "Semantic Search"] },
+  { icon: Server, title: "Backend & Full Stack", items: ["FastAPI", "Next.js", "REST APIs"] },
+  { icon: LineChart, title: "Data Analytics", items: ["Pandas", "NumPy", "PostgreSQL", "Power BI", "EDA"] },
+  { icon: Cloud, title: "Cloud & Deployment", items: ["Google Cloud", "GCP", "Vertex AI", "Vercel", "Render", "Streamlit"] },
+  { icon: Cpu, title: "Electronics", items: ["VLSI", "Verilog", "FPGA", "Embedded Systems"] },
 ];
 
 export function Skills() {

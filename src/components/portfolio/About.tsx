@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Section } from "./Section";
 
 const stats = [
-  { v: "10+", l: "Projects Built" },
-  { v: "7+", l: "Certifications" },
-  { v: "20+", l: "Technologies" },
-  { v: "15+", l: "AI Tools Explored" },
+  { v: "5", l: "Featured Projects" },
+  { v: "5", l: "Certifications" },
+  { v: "2023–2027", l: "B.Tech (Final Year)" },
+  { v: "AI/ML", l: "Specialization" },
 ];
 
 export function About() {
@@ -36,15 +36,16 @@ export function About() {
           className="md:col-span-3 space-y-6"
         >
           <p className="text-lg leading-relaxed text-foreground/80">
-            I'm a 3rd-year Electronics Engineering student specializing in{" "}
+            I'm a final-year B.Tech Electronics Engineering student at MJPRU, Bareilly,
+            specializing in{" "}
             <span className="text-foreground font-semibold">Artificial Intelligence & Machine Learning</span>.
-            Passionate about Generative AI, data analytics, and intelligent systems that
-            feel almost magical to use.
+            I build practical AI applications, RAG systems, LLM-powered tools, and
+            data-driven solutions.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            From RAG pipelines and LLM apps to analytical dashboards and embedded systems,
-            I love building AI-powered products and data-driven solutions across the full
-            stack — research, prototyping, and shipping.
+            My work spans Python and FastAPI backends, LangChain and vector databases,
+            Google Gemini integrations, GCP / Vertex AI, and data analytics — from
+            prototyping and evaluation through to shipping usable products.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
