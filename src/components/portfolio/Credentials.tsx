@@ -3,27 +3,25 @@ import { Section } from "./Section";
 import { Award, GraduationCap } from "lucide-react";
 
 const certs = [
-  { name: "Google Cloud Generative AI", issuer: "Google Cloud" },
-  { name: "Introduction to Machine Learning", issuer: "Google Cloud Skills Boost" },
-  { name: "Vertex AI", issuer: "Google Cloud" },
-  { name: "Google Cloud Skills Boost", issuer: "Google" },
-  { name: "VLSI for Beginners", issuer: "Maven Silicon" },
-  { name: "Drone Bootcamp", issuer: "Workshop" },
-  { name: "Business Analysis", issuer: "Certification" },
+  { name: "Generative AI Studio (Vertex AI)", issuer: "Google Cloud" },
+  { name: "Introduction to Generative AI", issuer: "Google Cloud" },
+  { name: "Introduction to Machine Learning", issuer: "Kaggle" },
+  { name: "AWS Artificial Intelligence Practitioner Learning Plan", issuer: "Completed learning plan (not a certification)" },
+  { name: "VLSI for Beginners: Verilog, FPGA & VLSI CAD", issuer: "NIELIT" },
 ];
 
 const edu = [
   {
     school: "B.Tech — Electronics Engineering",
-    place: "Specialization: AI & Machine Learning",
+    place: "MJPRU, Bareilly · Specialization: AI & Machine Learning",
     period: "2023 — 2027",
-    detail: "Core focus on AI/ML, Generative AI, data analytics, and intelligent embedded systems.",
+    detail: "Final-year student with a core focus on AI/ML, Generative AI, and data analytics.",
   },
   {
-    school: "Diploma in German Language",
-    place: "Foreign Language Certification",
+    school: "Diploma in Proficiency in German Language",
+    place: "MJPRU, Bareilly",
     period: "Completed",
-    detail: "Conversational and written proficiency in German — broadening global collaboration reach.",
+    detail: "Foreign language proficiency diploma.",
   },
 ];
 
