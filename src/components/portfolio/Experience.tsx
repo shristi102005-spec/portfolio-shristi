@@ -4,10 +4,24 @@ import { Briefcase } from "lucide-react";
 
 const items = [
   {
+    role: "AI & ML Intern",
+    org: "Prompt Pulse",
+    period: "Jun 2026 — Jul 2026",
+    desc: "Supported development of K-GPT, a RAG-based AI study assistant for college students.",
+    points: [
+      "Set up the local development environment using Next.js, FastAPI, PostgreSQL/Supabase, Redis, and Cloudflare.",
+      "Conducted QA testing across chat accuracy, multilingual support, and OCR.",
+      "Identified a critical PDF/DOCX upload regression.",
+      "Researched and recommended an OCR model strategy using Gemini 2.5 Flash.",
+      "Contributed to prompt engineering, dashboard testing, and debugging across the LLM application pipeline.",
+    ],
+  },
+  {
     role: "Campus Ambassador",
     org: "eDC IIT Delhi — Beacon 2026",
     period: "2025 — 2026",
     desc: "Led campus outreach, managed communications and coordination, and promoted Beacon 2026 — a national-level tech festival by the Entrepreneurship Development Cell, IIT Delhi.",
+    points: [] as string[],
   },
 ];
 
@@ -34,6 +48,15 @@ export function Experience() {
               <h3 className="text-lg font-semibold">{it.role}</h3>
               <div className="text-sm text-muted-foreground mb-3">{it.org}</div>
               <p className="text-sm text-foreground/70 leading-relaxed">{it.desc}</p>
+              {it.points.length > 0 && (
+                <ul className="mt-3 space-y-1.5">
+                  {it.points.map((p) => (
+                    <li key={p} className="text-sm text-foreground/70 leading-relaxed flex gap-2">
+                      <span className="text-[var(--neon-cyan)]">·</span> {p}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </motion.div>
         ))}
