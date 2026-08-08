@@ -112,8 +112,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-8 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed"
         >
-          Electronics engineering student specializing in AI & ML. I design intelligent
-          systems that turn raw data into elegant, real-world products.
+          I build practical AI applications and intelligent systems using Python, FastAPI,
+          LLMs, RAG, and modern cloud technologies.
         </motion.p>
 
         <motion.div
@@ -143,8 +143,8 @@ export function Hero() {
           transition={{ delay: 0.8 }}
           className="mt-12 flex items-center justify-center gap-5 text-muted-foreground"
         >
-          <a href="#" aria-label="GitHub" className="hover:text-foreground transition"><Github className="w-5 h-5" /></a>
-          <a href="#" aria-label="LinkedIn" className="hover:text-foreground transition"><Linkedin className="w-5 h-5" /></a>
+          <a href="https://github.com/shristi102005-spec" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-foreground transition"><Github className="w-5 h-5" /></a>
+          <a href="https://www.linkedin.com/in/shristi-483363295" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-foreground transition"><Linkedin className="w-5 h-5" /></a>
           <a href="#contact" aria-label="Email" className="hover:text-foreground transition"><Mail className="w-5 h-5" /></a>
         </motion.div>
       </div>
