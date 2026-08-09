@@ -101,27 +101,38 @@ export function Projects() {
         transition={{ duration: 0.6 }}
         className="group relative glass rounded-3xl overflow-hidden mb-8"
       >
-        <div className="grid lg:grid-cols-5">
-          <div className={`relative min-h-40 lg:min-h-full lg:col-span-2 bg-gradient-to-br ${featured.gradient}`}>
-            <div
-              className="absolute inset-0 opacity-30"
-              style={{ backgroundImage: "radial-gradient(circle at 30% 30%, white 1px, transparent 1px)", backgroundSize: "20px 20px" }}
-            />
-            <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full glass-strong">
-              Flagship
+        <div className="grid lg:grid-cols-12">
+          {/* Project visual area — neutral labelled placeholder, no fake UI */}
+          <div className="lg:col-span-5 p-5 sm:p-6 lg:p-8 flex">
+            <div className="w-full rounded-2xl border border-white/10 bg-black/40 overflow-hidden flex flex-col">
+              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10 bg-white/[0.03]">
+                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                <span className="ml-3 text-[10px] tracking-wide text-muted-foreground truncate">
+                  ai-career-copilot-black.vercel.app
+                </span>
+              </div>
+              <div className="flex-1 flex flex-col items-center justify-center text-center gap-2 px-6 py-12">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--neon-cyan)]">Flagship Project</span>
+                <span className="text-lg sm:text-xl font-semibold">AI Career Copilot</span>
+                <span className="text-xs text-muted-foreground">Next.js · FastAPI · Google Gemini</span>
+              </div>
             </div>
           </div>
-          <div className="p-6 sm:p-8 lg:col-span-3">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3">{featured.title}</h3>
+
+          <div className="lg:col-span-7 p-6 sm:p-8 lg:pl-0 lg:py-8">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 leading-snug">{featured.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{featured.desc}</p>
-            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 mt-5 text-sm text-foreground/75">
+            <div className="mt-6 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">What it does</div>
+            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 mt-3 text-sm text-foreground/75">
               {featured.features?.map((f) => (
                 <li key={f} className="flex gap-2">
                   <span className="text-[var(--neon-cyan)]">·</span> {f}
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-2 mt-5">
+            <div className="flex flex-wrap gap-2 mt-6">
               {featured.tags.map((t) => (
                 <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-muted-foreground">{t}</span>
               ))}
