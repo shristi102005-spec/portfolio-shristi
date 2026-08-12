@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mic, MicOff, Phone, PhoneOff, Sparkles } from "lucide-react";
+import { Mic, MicOff, Phone, PhoneOff } from "lucide-react";
 import Vapi from "@vapi-ai/web";
 
 const VAPI_PUBLIC_KEY = "263927c3-b68f-4dfe-8757-9a734306e697";
