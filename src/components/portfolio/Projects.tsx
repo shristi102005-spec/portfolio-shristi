@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { ArrowUpRight, Github } from "lucide-react";
+import imgCopilot from "@/assets/proj-career-copilot.jpg";
+import imgNeuronest from "@/assets/proj-neuronest.jpg";
+import imgSynckro from "@/assets/proj-synckro.jpg";
+import imgShopping from "@/assets/proj-shopping.jpg";
+import imgHouse from "@/assets/proj-house.jpg";
 
 type Project = {
   title: string;
   desc: string;
   tags: string[];
-  gradient: string;
+  image: string;
   github?: string;
   live?: string;
   features?: string[];
@@ -17,7 +22,7 @@ const featured: Project = {
   desc:
     "Full-stack AI career assistant for resume optimization, job matching, cover letter generation, and interview preparation.",
   tags: ["Next.js", "FastAPI", "Python", "Google Gemini AI", "Tailwind CSS", "REST APIs"],
-  gradient: "from-fuchsia-500/40 via-purple-500/30 to-indigo-500/40",
+  image: imgCopilot,
   github: "https://github.com/shristi102005-spec/AI-Career-Copilot",
   live: "https://ai-career-copilot-black.vercel.app",
   features: [
@@ -37,20 +42,23 @@ const projects: Project[] = [
     title: "NeuroNest AI — AI-Powered Document Intelligence",
     desc: "RAG-based document intelligence system supporting semantic document search, context-aware Q&A, MCQ generation, and document summarization.",
     tags: ["Python", "LangChain", "FAISS", "ChromaDB", "Hugging Face", "OpenAI API", "Streamlit"],
-    gradient: "from-violet-500/40 via-purple-500/30 to-indigo-500/40",
+    image: imgNeuronest,
     github: "https://github.com/shristi102005-spec/NeuroNestAI",
+    features: ["Semantic document search", "Context-aware Q&A", "MCQ generation", "Document summarization"],
   },
   {
     title: "Synckro — Real-Time Multilingual Translator",
     desc: "Real-time multilingual translation system using speech-to-text, language detection, translation, and text-to-speech with online/offline fallback.",
     tags: ["Python", "Vosk", "Deep Translator", "Argos Translate", "Pyttsx3", "JavaScript"],
-    gradient: "from-cyan-400/40 via-blue-500/30 to-indigo-500/40",
+    image: imgSynckro,
+    features: ["Speech-to-text capture", "Automatic language detection", "Text-to-speech output", "Online / offline fallback"],
   },
   {
     title: "Customer Shopping Behavior Analysis",
     desc: "Analyzed 3,900+ retail transactions through a Python → PostgreSQL → Power BI pipeline to identify customer segmentation, discount behavior, and revenue patterns.",
     tags: ["Python", "PostgreSQL", "Power BI", "EDA"],
-    gradient: "from-emerald-400/40 via-teal-500/30 to-cyan-500/40",
+    image: imgShopping,
+    features: ["Python → PostgreSQL → Power BI pipeline", "Customer segmentation", "Discount behavior analysis", "Revenue pattern reporting"],
   },
 ];
 
@@ -59,9 +67,52 @@ const additional: Project[] = [
     title: "House Price Prediction",
     desc: "Comparative ML pipeline with hyperparameter tuning and RMSE optimization across regression models.",
     tags: ["Python", "Scikit-learn", "Machine Learning"],
-    gradient: "from-orange-400/40 via-pink-500/30 to-rose-500/40",
+    image: imgHouse,
+    features: ["Comparative regression models", "Hyperparameter tuning", "RMSE optimization"],
   },
 ];
+
+function Badges({ tags }: { tags: string[] }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {tags.map((t) => (
+        <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-muted-foreground">{t}</span>
+      ))}
+    </div>
+  );
+}
+
+function Features({ items }: { items?: string[] }) {
+  if (!items?.length) return null;
+  return (
+    <>
+      <div className="mt-5 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Key features</div>
+      <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 mt-3 mb-5 text-sm text-foreground/75">
+        {items.map((f) => (
+          <li key={f} className="flex gap-2">
+            <span className="text-[var(--neon-cyan)]">·</span> {f}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+function Visual({ p, className = "" }: { p: Project; className?: string }) {
+  return (
+    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 ${className}`}>
+      <img
+        src={p.image}
+        alt={`Abstract concept illustration for ${p.title}`}
+        loading="lazy"
+        width={1280}
+        height={720}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+    </div>
+  );
+}
 
 function Links({ p }: { p: Project }) {
   if (!p.github && !p.live) return null;

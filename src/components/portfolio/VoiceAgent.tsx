@@ -63,14 +63,14 @@ export function VoiceAgent() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-[70] group flex items-center gap-2 rounded-full pl-4 pr-5 py-3 bg-gradient-to-r from-[var(--neon-purple)] to-[var(--neon-blue)] text-white shadow-lg animate-pulse-glow"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[70] group flex items-center gap-2 rounded-full p-3 sm:pl-4 sm:pr-5 sm:py-3 bg-gradient-to-r from-[var(--neon-purple)] to-[var(--neon-blue)] text-white shadow-lg animate-pulse-glow"
         aria-label="Talk to AI Shristi"
       >
-        <span className="relative flex items-center justify-center w-7 h-7">
-          <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
-          <Sparkles className="w-4 h-4 relative" />
+        <span className="relative flex items-center justify-center w-6 h-6">
+          <span className="absolute inset-0 rounded-full bg-white/25 animate-ping" />
+          <Mic className="w-4 h-4 relative" />
         </span>
-        <span className="text-sm font-semibold tracking-tight">Talk to AI Shristi</span>
+        <span className="hidden sm:inline text-sm font-semibold tracking-tight">Talk to AI Shristi</span>
       </motion.button>
 
       <AnimatePresence>
@@ -80,7 +80,7 @@ export function VoiceAgent() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 22, stiffness: 260 }}
-            className="fixed bottom-24 right-6 z-[70] w-[340px] glass-strong rounded-2xl p-5 shadow-2xl"
+            className="fixed bottom-20 sm:bottom-24 right-4 sm:right-6 z-[70] w-[calc(100vw-2rem)] max-w-[340px] glass-strong rounded-2xl p-5 shadow-2xl"
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-[var(--neon-purple)] to-[var(--neon-cyan)] flex items-center justify-center">
