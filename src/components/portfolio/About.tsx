@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
+import avatar from "@/assets/shristi-avatar.jpg";
 
 const stats = [
   { v: "5", l: "Featured Projects" },
@@ -19,12 +20,19 @@ export function About() {
           transition={{ duration: 0.7 }}
           className="md:col-span-2"
         >
-          <div className="relative aspect-square rounded-3xl glass overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--neon-purple)]/30 via-transparent to-[var(--neon-cyan)]/30" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-9xl font-bold text-gradient">S</div>
+          <div className="relative mx-auto w-full max-w-[320px] md:max-w-none aspect-square rounded-3xl glass overflow-hidden">
+            <img
+              src={avatar}
+              alt="Illustrated portrait of Shristi, an AI/ML engineer, working on a laptop"
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 text-[11px] uppercase tracking-[0.25em] text-[var(--neon-cyan)]">
+              Building AI systems
             </div>
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-[var(--neon-purple)] opacity-30 blur-3xl" />
           </div>
         </motion.div>
 
