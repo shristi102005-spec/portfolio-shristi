@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
 import { ArrowUpRight, Github } from "lucide-react";
+import imgCopilot from "@/assets/proj-career-copilot.jpg";
+import imgNeuronest from "@/assets/proj-neuronest.jpg";
+import imgSynckro from "@/assets/proj-synckro.jpg";
+import imgShopping from "@/assets/proj-shopping.jpg";
+import imgHouse from "@/assets/proj-house.jpg";
 
 type Project = {
   title: string;
   desc: string;
   tags: string[];
-  gradient: string;
+  image: string;
   github?: string;
   live?: string;
   features?: string[];
@@ -17,7 +22,7 @@ const featured: Project = {
   desc:
     "Full-stack AI career assistant for resume optimization, job matching, cover letter generation, and interview preparation.",
   tags: ["Next.js", "FastAPI", "Python", "Google Gemini AI", "Tailwind CSS", "REST APIs"],
-  gradient: "from-fuchsia-500/40 via-purple-500/30 to-indigo-500/40",
+  image: imgCopilot,
   github: "https://github.com/shristi102005-spec/AI-Career-Copilot",
   live: "https://ai-career-copilot-black.vercel.app",
   features: [
@@ -37,20 +42,23 @@ const projects: Project[] = [
     title: "NeuroNest AI — AI-Powered Document Intelligence",
     desc: "RAG-based document intelligence system supporting semantic document search, context-aware Q&A, MCQ generation, and document summarization.",
     tags: ["Python", "LangChain", "FAISS", "ChromaDB", "Hugging Face", "OpenAI API", "Streamlit"],
-    gradient: "from-violet-500/40 via-purple-500/30 to-indigo-500/40",
+    image: imgNeuronest,
     github: "https://github.com/shristi102005-spec/NeuroNestAI",
+    features: ["Semantic document search", "Context-aware Q&A", "MCQ generation", "Document summarization"],
   },
   {
     title: "Synckro — Real-Time Multilingual Translator",
     desc: "Real-time multilingual translation system using speech-to-text, language detection, translation, and text-to-speech with online/offline fallback.",
     tags: ["Python", "Vosk", "Deep Translator", "Argos Translate", "Pyttsx3", "JavaScript"],
-    gradient: "from-cyan-400/40 via-blue-500/30 to-indigo-500/40",
+    image: imgSynckro,
+    features: ["Speech-to-text capture", "Automatic language detection", "Text-to-speech output", "Online / offline fallback"],
   },
   {
     title: "Customer Shopping Behavior Analysis",
     desc: "Analyzed 3,900+ retail transactions through a Python → PostgreSQL → Power BI pipeline to identify customer segmentation, discount behavior, and revenue patterns.",
     tags: ["Python", "PostgreSQL", "Power BI", "EDA"],
-    gradient: "from-emerald-400/40 via-teal-500/30 to-cyan-500/40",
+    image: imgShopping,
+    features: ["Python → PostgreSQL → Power BI pipeline", "Customer segmentation", "Discount behavior analysis", "Revenue pattern reporting"],
   },
 ];
 
@@ -59,9 +67,52 @@ const additional: Project[] = [
     title: "House Price Prediction",
     desc: "Comparative ML pipeline with hyperparameter tuning and RMSE optimization across regression models.",
     tags: ["Python", "Scikit-learn", "Machine Learning"],
-    gradient: "from-orange-400/40 via-pink-500/30 to-rose-500/40",
+    image: imgHouse,
+    features: ["Comparative regression models", "Hyperparameter tuning", "RMSE optimization"],
   },
 ];
+
+function Badges({ tags }: { tags: string[] }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {tags.map((t) => (
+        <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-muted-foreground">{t}</span>
+      ))}
+    </div>
+  );
+}
+
+function Features({ items }: { items?: string[] }) {
+  if (!items?.length) return null;
+  return (
+    <>
+      <div className="mt-5 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Key features</div>
+      <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 mt-3 mb-5 text-sm text-foreground/75">
+        {items.map((f) => (
+          <li key={f} className="flex gap-2">
+            <span className="text-[var(--neon-cyan)]">·</span> {f}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+function Visual({ p, className = "" }: { p: Project; className?: string }) {
+  return (
+    <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 ${className}`}>
+      <img
+        src={p.image}
+        alt={`Abstract concept illustration for ${p.title}`}
+        loading="lazy"
+        width={1280}
+        height={720}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+    </div>
+  );
+}
 
 function Links({ p }: { p: Project }) {
   if (!p.github && !p.live) return null;
@@ -101,42 +152,17 @@ export function Projects() {
         transition={{ duration: 0.6 }}
         className="group relative glass rounded-3xl overflow-hidden mb-8"
       >
-        <div className="grid lg:grid-cols-12">
-          {/* Project visual area — neutral labelled placeholder, no fake UI */}
+        <div className="grid lg:grid-cols-12 gap-0">
           <div className="lg:col-span-5 p-5 sm:p-6 lg:p-8 flex">
-            <div className="w-full rounded-2xl border border-white/10 bg-black/40 overflow-hidden flex flex-col">
-              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10 bg-white/[0.03]">
-                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                <span className="ml-3 text-[10px] tracking-wide text-muted-foreground truncate">
-                  ai-career-copilot-black.vercel.app
-                </span>
-              </div>
-              <div className="flex-1 flex flex-col items-center justify-center text-center gap-2 px-6 py-12">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-[var(--neon-cyan)]">Flagship Project</span>
-                <span className="text-lg sm:text-xl font-semibold">AI Career Copilot</span>
-                <span className="text-xs text-muted-foreground">Next.js · FastAPI · Google Gemini</span>
-              </div>
-            </div>
+            <Visual p={featured} className="w-full min-h-[180px] sm:min-h-[240px]" />
           </div>
 
           <div className="lg:col-span-7 p-6 sm:p-8 lg:pl-0 lg:py-8">
+            <div className="text-[10px] uppercase tracking-[0.3em] text-[var(--neon-cyan)] mb-3">Flagship Project</div>
             <h3 className="text-xl sm:text-2xl font-semibold mb-3 leading-snug">{featured.title}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{featured.desc}</p>
-            <div className="mt-6 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">What it does</div>
-            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5 mt-3 text-sm text-foreground/75">
-              {featured.features?.map((f) => (
-                <li key={f} className="flex gap-2">
-                  <span className="text-[var(--neon-cyan)]">·</span> {f}
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap gap-2 mt-6">
-              {featured.tags.map((t) => (
-                <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-muted-foreground">{t}</span>
-              ))}
-            </div>
+            <Features items={featured.features} />
+            <Badges tags={featured.tags} />
             <Links p={featured} />
           </div>
         </div>
@@ -152,18 +178,14 @@ export function Projects() {
             transition={{ duration: 0.6, delay: i * 0.08 }}
             className="group relative glass rounded-3xl overflow-hidden hover:-translate-y-1 transition-all duration-500"
           >
-            <div className={`relative h-40 sm:h-48 bg-gradient-to-br ${p.gradient} overflow-hidden`}>
-              <div className="absolute inset-0 opacity-30"
-                style={{ backgroundImage: "radial-gradient(circle at 30% 30%, white 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
+            <div className="p-5 sm:p-6 pb-0">
+              <Visual p={p} className="h-40 sm:h-44" />
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-gradient transition">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-muted-foreground">{t}</span>
-                ))}
-              </div>
+            <div className="p-5 sm:p-6">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 leading-snug group-hover:text-gradient transition">{p.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+              <Features items={p.features} />
+              <Badges tags={p.tags} />
               <Links p={p} />
             </div>
           </motion.article>
@@ -172,17 +194,20 @@ export function Projects() {
 
       <div className="mt-14">
         <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-5 text-center">Additional Projects</div>
-        <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        <div className="grid gap-6 max-w-3xl mx-auto">
           {additional.map((p) => (
-            <div key={p.title} className="glass rounded-2xl p-5">
-              <h4 className="font-semibold text-sm mb-1.5">{p.title}</h4>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{p.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span key={t} className="text-[11px] px-2 py-1 rounded-md bg-white/5 border border-white/10 text-muted-foreground">{t}</span>
-                ))}
+            <article key={p.title} className="group glass rounded-3xl overflow-hidden">
+              <div className="p-5 sm:p-6 pb-0">
+                <Visual p={p} className="h-40 sm:h-44" />
               </div>
-            </div>
+              <div className="p-5 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 leading-snug group-hover:text-gradient transition">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                <Features items={p.features} />
+                <Badges tags={p.tags} />
+                <Links p={p} />
+              </div>
+            </article>
           ))}
         </div>
       </div>
