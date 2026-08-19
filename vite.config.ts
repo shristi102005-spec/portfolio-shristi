@@ -5,11 +5,31 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { createRequire } from "node:module";
+
+const require_ = createRequire(import.meta.url);
+const eventsPath = require_.resolve("events/");
 
 // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
 // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
+  },
+  // @vapi-ai/web is CJS and does `require("events")`. In the production client
+  // bundle that resolved to a namespace object, so `class ... extends events.default`
+  // threw "Class extends value #<Object> is not a constructor" and blanked the page.
+  // Point it at the real `events` implementation so the CJS default interop works.
+  vite: {
+    plugins: [
+      {
+        name: "resolve-node-events-for-browser",
+        enforce: "pre" as const,
+        resolveId(source: string) {
+          if (source === "events" || source === "node:events") return eventsPath;
+          return null;
+        },
+      },
+    ],
   },
 });
