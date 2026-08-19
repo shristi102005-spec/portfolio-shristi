@@ -12,4 +12,13 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  // @vapi-ai/web is CJS and does `require("events")`. In the production client
+  // bundle that resolved to a namespace object, so `class ... extends events.default`
+  // threw "Class extends value #<Object> is not a constructor" and blanked the page.
+  // Point it at the real `events` implementation so the CJS default interop works.
+  vite: {
+    resolve: {
+      alias: [{ find: /^events$/, replacement: "events/events.js" }],
+    },
+  },
 });
